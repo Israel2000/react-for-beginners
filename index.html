@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React for Beginners</title>
+    <!-- babel: js compiler -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        class App extends React.Component {
+            state = {
+                name: 'Nemi',
+                age: 22,
+                career: 'Front-end Developer'
+            }
+            handleClick(e) {
+                console.log(e.target);
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>hey, guys</h1>
+                        <p>My name is: {this.state.name} and I am {this.state.age} years old.</p>
+                        <button onClick={this.handleClick}>Click Me</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<App />,
+            document.getElementById('app'));
+    </script>
+</body>
+
+</html>
